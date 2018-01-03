@@ -3,11 +3,29 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
+	"log"
+	"os"
 
 	bf "gopkg.in/russross/blackfriday.v2"
 )
 
 func main() {
+
+	// get markdown text
+	var content []byte
+	var err error
+	if len(os.Args) == 1 {
+		content, err = ioutil.ReadAll(os.Stdin)
+		if err != nil {
+			log.Fatal(err)
+		}
+	} else {
+		content, err = ioutil.ReadFile(os.Args[1])
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 
 	r := NewTraceRenderer()
 	_ = bf.Run(content, bf.WithRenderer(r))
@@ -180,30 +198,3 @@ func (r *TraceRenderer) RenderFooter(w io.Writer, ast *bf.Node) {
 func dbg(source, msg string) {
 	fmt.Printf("[%v] %v\n", source, msg)
 }
-
-/*
-Pick which "content" you wich to process by leaving it
-un-commented
-*/
-
-/*
-var content = []byte(
-	`# Heading 1
-This test shows a code block inside a blockquote.
-
-> Example 1
->
->     sub routine {
->        print "hi";
->     }
-
-See above sample!
-`)
-*/
-
-var content = []byte(
-	`# Heading 1
-Lines in a single paragraph
-that are spread across
-three lines in the text file.
-`)
