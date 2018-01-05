@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 
 	bf "gopkg.in/russross/blackfriday.v2"
 )
@@ -26,9 +27,11 @@ func main() {
 			log.Fatal(err)
 		}
 	}
+	s := string(content)
+	s = strings.Replace(s, "\r\n", "\n", -1)
 
 	r := NewTraceRenderer()
-	_ = bf.Run(content, bf.WithRenderer(r))
+	_ = bf.Run([]byte(s), bf.WithRenderer(r))
 
 }
 
