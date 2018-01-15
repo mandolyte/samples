@@ -115,7 +115,8 @@ func (r *TraceRenderer) RenderNode(w io.Writer, node *bf.Node, entering bool) bf
 			dbg("BlockQuote (leaving)", "")
 		}
 	case bf.HTMLBlock:
-		dbg("HTMLBlock", "")
+		dbg("HTMLBlock",
+			fmt.Sprintf("node.Literal is:%v\n", string(node.Literal)))
 	case bf.Heading:
 		if entering {
 			switch node.HeadingData.Level {
