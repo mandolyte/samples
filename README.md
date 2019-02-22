@@ -22,3 +22,9 @@ reverted. The reverted string is then decrypted.
 
 This just shows the end-to-end workflow when it is required to store
 the encrypted text as a string in a database or text file type.
+
+## sqlite
+
+This folder has samples using various drivers, each in its own folder.
+At this writing, only the `mattn` driver is present. Each of these will have
+its own README.
