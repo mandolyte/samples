@@ -2,6 +2,8 @@
 
 ## Limitations
 
+### Reference Style Links
+
 Does not handle reference style links, for either URLs or Images. For example:
 ```
 Reference-style: 
@@ -14,6 +16,19 @@ Reference-style:
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 ```
+
+I believe that in order to handle references, regular expressions will not suffice;
+and that a AST Parser will be needed. For example, Github's own at:
+https://github.com/commonmark/commonmark.js/.
+
+
+
+
+### Decimal Points
+
+See details here: https://en.wikipedia.org/wiki/Decimal_separator.
+
+Only the decimal point (a period character) is supported.
 
 ## Supported Markdown Cases
 
