@@ -15,6 +15,8 @@ Reference-style:
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 ```
 
+## Supported Markdown Cases
+
 In this folder are six test cases and all are passing. To run, `node.js` must be installed.
 
 Here are the results when run:
