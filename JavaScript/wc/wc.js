@@ -1,15 +1,4 @@
 
-
-function mDextractSubstr(str, regexp) {
-    let s;
-    s = str.replace(/\[.*\]\(.*\)/g,' ');
-    s = s.replace(/(\d+):(\d+)/g, '$1 $2'); // handle numbers with colons between them
-    s = s.replace(/(\d+)-(\d+)/g, '$1 $2'); // handle numbers with dashes between them
-    return s.replace(/[^\w\s]|_/g, '')
-        .replace(/\s+/g, ' ')
-        .toLowerCase().match(regexp) || [];
-}
-
 // Find words by searching for sequences of non-whitespace characters.
 function getMdWords(str) {
     let s;
@@ -32,7 +21,7 @@ function getWords(str) {
 var fs    = require('fs');
 //var util  = require('util');
 
-let tests = ["test1.txt","test2.md", "test3.md", "test4.md", "test5.md", "test6.md"];
+let tests = ["test1.txt", "test2.md", "test3.md", "test4.md", "test5.md", "test6.md"];
 let expected = [11,7, 7, 3, 3, 12];
 
 for (var i=0; i < tests.length; i++) {
