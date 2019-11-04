@@ -4,7 +4,7 @@
 
 ### Reference Style Links
 
-Does not handle reference style links, for either URLs or Images. For example:
+1. Does not handle reference style links, for either URLs or Images. For example:
 ```
 Reference-style: 
 ![alt text][logo]
@@ -15,6 +15,12 @@ Reference-style:
 
 
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
+```
+
+2. In ordered lists, the numerals are counts as words to be translated. Thus in the below, the total word count is 4 and the distinct word is 2.
+```
+1. test
+1. test
 ```
 
 I believe that in order to handle references, regular expressions will not suffice;
