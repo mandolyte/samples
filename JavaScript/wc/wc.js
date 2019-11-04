@@ -18,6 +18,8 @@ function wordCount(str) {
     let counts = {};
     counts["total"] = getMdWords(str).length;
     counts["distinct"] = [...new Set(getMdWords(str))].length;
+    l1count = str.match(/^# |\n# /g) || [];
+    counts["l1count"] = l1count.length;
     return counts;
 }
 
@@ -37,15 +39,18 @@ var fs    = require('fs');
 let tests = ["test1.txt", "test2.md", "test3.md", "test4.md", "test5.md", "test6.md"];
 let expected_distinct = [11,7, 7, 3, 3, 18];
 let expected_total = [13, 24, 16, 4, 4, 26];
+let expected_l1counts = [0, 1, 1, 2, 1, 1];
 
 for (var i=0; i < tests.length; i++) {
     let testnum = i;
     let ndistinct = expected_distinct[i];
-    let ntotal  = expected_total[i];
+    let ntotal    = expected_total[i];
+    let nl1       = expected_l1counts[i];
     fs.readFile(tests[i], (err, data) => {
         if (err) throw err;
         let s = ""+data;
         let results = wordCount(s);
+        console.log("---");
 
         let t = results.distinct;
         if ( t === ndistinct ) {
@@ -62,6 +67,14 @@ for (var i=0; i < tests.length; i++) {
             console.log("Total Test #",testnum," failed:",u," - expected:",ntotal);
             console.log("Words are:",getTotalWords(s))
         }
+
+        let v = results.l1count;
+        if ( v === nl1 ) {
+            console.log("L1 Count Test #",testnum," passed:",v);
+        } else {
+            console.log("L1 Count Test #",testnum," failed:",v," - expected:",nl1);
+        }
+
     });    
 }
 
