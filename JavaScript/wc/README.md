@@ -17,7 +17,7 @@ Reference-style:
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 ```
 
-2. In ordered lists, the numerals are counts as words to be translated. Thus in the below, the total word count is 4 and the distinct word is 2.
+2. [**Fixed**] ~~In ordered lists, the numerals are counts as words to be translated. Thus in the below, the total word count is 4 and the distinct word is 2.~~ **Ordered lists will now discount the numbers** Thus in the below, the total word count will be 2 and the distinct word count will be 1.
 ```
 1. test
 1. test
