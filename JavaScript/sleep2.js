@@ -2,7 +2,7 @@
 let public_loop_count = 10;
 let secret_early_stop = 2;
 
-(function theLoop (i) {
+await (async function theLoop (i) {
   setTimeout(function () {
     console.log("Cheese!");
     if (--i) {          // If i > 0, keep going
@@ -13,3 +13,6 @@ let secret_early_stop = 2;
     }
   }, 3000);
 })(public_loop_count);
+
+console.log("at end");
+
