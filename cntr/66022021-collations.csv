@@ -1,0 +1,14 @@
+VerseID,CollationID,VariantID,Relation,Pattern,Align,Span,Probability,Classic,Koine,Medieval,LexemeID,Role,Morphology,GlossPre,GlossHelper,GlossWord,GlossPost
+66022021,66022021001,,,,,,100,h,η,ἡ,35880,E,....NFS,,,the,
+66022021,66022021002,,,,,,100,caris,χαρισ,χάρις,54850,N,....NFS,,,grace,
+66022021,66022021003,,,,,,100,tou,του,τοῦ,35880,E,....GMS,of,,the,
+66022021,66022021004,,,,,,100,kuriou,=κυ,Κυρίου,29620,N,....GMS,,,Lord,
+66022021,66022021005,yh0,,A,,,,hmwn,ημων,ἡμῶν,14730,R,...1G.P,of,,us,
+66022021,66022021006,,,,,,100,ihsou,=ιυ,Ἰησοῦ,24240,N,....GMS,,,Jesus,
+66022021,66022021007,cxf,,A,,,,cristou,=χυ,Χριστοῦ,55470,N,....GMS,,,Christ,
+66022021,66022021008,,,,,,100,meta,μετα,μετὰ,33260,P,.......,,,with,
+66022021,66022021009,yie,,C,,,,pantwn,παντων,πάντων,39560,E,....GMP,,,all,
+66022021,66022021010,yie,,c,,,50,twn,των,τῶν,35880,E,....GMP,,,the,
+66022021,66022021011,yie,,cS,1,,50,agiwn,αγιων,ἁγίων,400,S,....GMP,,,holy,ones
+66022021,66022021012,yie,,cs,1,,,umwn,υμων,ὑμῶν,47710,R,...2G.P,of,,you_all,
+66022021,66022021013,heh,i,A,,,50,amhn,αμην,ἀμήν,2810,I,.......,,,Amen,
